@@ -1,14 +1,21 @@
 package com.example.security.dto;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * @author Xiang JiangCheng
  */
+@ApiModel(value = "响应实体类")
 public class Response<T> {
 
+    @ApiModelProperty(value = "业务状态码, 0 - 表示成功,其他表示失败")
     private int status;
 
+    @ApiModelProperty(value = "业务状态码描述信息")
     private String msg;
 
+    @ApiModelProperty(value = "响应数据")
     private T data;
 
     public Response() {

@@ -5,9 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -16,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 打印请求日志
- * 注意：若401，403则不会进入该方法，打印出请求记录
+ * 注意：若401，403，或者抛异常则不会进入该方法，打印不出请求记录，所以用拦截器替换
  *
  * @author Xiang JiangCheng
  */
 // @Component
 // @Aspect
-    @Deprecated
+@Deprecated
 public class LogAspect {
 
     private final static Logger logger = LogManager.getLogger(LogAspect.class);
