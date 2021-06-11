@@ -12,8 +12,13 @@ spring data jpa
 > 2021-06-10 实现自定义spring security oauth2登录
 >> 基于jdbc数据库实现密码模式
 >
-> 2021-06-11 集成swagger2 
->
+> 2021-06-11 集成文档工具knife4j
+>> 目前用的老版本1.9x，蓝色界面；后面可更新到新版2.x,黑色界面 -- 更新请参考https://blog.csdn.net/u010192145/article/details/103556581
+
+## 部署
+创建数据库test -> 执行oauth2.sql  -> 启动项目即可
+
+文档地址：http://192.168.2.13:18000/doc.html
 
 ## 接口文档
 1、用户密码登录
