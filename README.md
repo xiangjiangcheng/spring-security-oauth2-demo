@@ -6,6 +6,7 @@ spring security oauth2 demo
 spring boot 2.3.10
 spring security oauth2 2.3.8
 spring data jpa
+knife4j 1.9.x
 ```
 
 ## 更新记录
