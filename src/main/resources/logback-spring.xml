@@ -12,7 +12,7 @@
         <appender-ref ref="console" />
     </logger>
 
-    <logger name="org.springframework" level="WARN" additivity="false">
+    <logger name="org.springframework" level="DEBUG" additivity="false">
         <appender-ref ref="console" />
     </logger>
 
