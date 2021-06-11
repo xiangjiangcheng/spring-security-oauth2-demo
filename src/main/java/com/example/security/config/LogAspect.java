@@ -15,10 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * 打印请求日志
+ * 注意：若401，403则不会进入该方法，打印出请求记录
+ *
  * @author Xiang JiangCheng
  */
-@Component
-@Aspect
+// @Component
+// @Aspect
+    @Deprecated
 public class LogAspect {
 
     private final static Logger logger = LogManager.getLogger(LogAspect.class);
