@@ -13,7 +13,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LogInterceptor());
+        // 排除swagger相关请求
+        registry.addInterceptor(new LogInterceptor()).excludePathPatterns("/swagger-resources", "/doc.html**/**", "/webjars/**", "/v3/api-docs", "/error");
     }
 
     @Override
