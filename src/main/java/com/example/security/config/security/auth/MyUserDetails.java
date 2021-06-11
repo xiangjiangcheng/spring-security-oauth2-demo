@@ -12,14 +12,21 @@ import java.util.Collection;
 public class MyUserDetails implements UserDetails {
 
     private static final long serialVersionUID = 4761073170738191351L;
+    private static final MyUserDetails ANONYMOUS = new MyUserDetails("anonymous", true);
     private String guid;
     private String name;
     private String username;
     private String password;
     private boolean admin;
     private boolean enabled;
+    private boolean isAnonymousUser;
 
     public MyUserDetails() {
+    }
+
+    public MyUserDetails(String name, boolean isAnonymousUser) {
+        this.name = name;
+        this.isAnonymousUser = isAnonymousUser;
     }
 
     public MyUserDetails(String name, boolean admin, boolean enabled) {
@@ -37,6 +44,10 @@ public class MyUserDetails implements UserDetails {
         userDetails.setEnabled(user.getEnabled());
         userDetails.setName(user.getName());
         return userDetails;
+    }
+
+    public static MyUserDetails anonymousUser() {
+        return null;
     }
 
     public String getGuid() {
@@ -75,6 +86,14 @@ public class MyUserDetails implements UserDetails {
         this.enabled = enabled;
     }
 
+    public boolean isAnonymousUser() {
+        return isAnonymousUser;
+    }
+
+    public void setAnonymousUser(boolean anonymousUser) {
+        isAnonymousUser = anonymousUser;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -108,5 +127,9 @@ public class MyUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public void updateName(String name) {
+        this.name = name;
     }
 }
